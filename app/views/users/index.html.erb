@@ -1,0 +1,25 @@
+<h1>Listing Users</h1>
+<table>
+  <thead>
+    <tr>
+      <td>First Name</td>
+      <td>Last Name</td>
+      <td>Email</td>
+      <td>Options</td>
+    </tr>
+  </thead>
+  <tbody>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.first_name %></td>
+      <td><%= user.last_name %></td>
+      <td><%= user.email_address %></td>
+      <td><a href="/users/<%=user.id %>">Show </a>
+        <a href="/users/<%=user.id %>/edit">Edit </a>
+        <a href="/users/<%=user.id %>" data-method="delete">Delete</a>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table></br>
+<a href="/users/new">New User</a>

@@ -1,0 +1,13 @@
+<h1>Edit</h1>
+
+<form action = "/users/<%= @user.id %>" method = "post">
+  <input type="hidden" name="_method" value="patch" />
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <label>First name: <input type='text' name='user[first_name]' value="<%= @user.first_name %>"></label></br>
+  <label>Last name: <input type='text' name='user[last_name]'value="<%= @user.last_name %>"></label></br>
+  <label>Email:<input type='text' name='user[email_address]'value="<%= @user.email_address %>"></label></br>
+  <label>Password:  <input type='password' name='user[password]'value="<%= @user.password %>"></label></br>
+  <input type='submit' value='Update'>
+</form>
+
+<a href="/users/<%= @user.id %>/show">Show</a> | <a href="/users">Back</a>
